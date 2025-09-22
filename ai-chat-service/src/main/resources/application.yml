@@ -1,0 +1,33 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ai-chat-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ai_roleplay
+      database: ai_roleplay
+
+# LLM配置 - 只使用基础LLM模型能力
+openai:
+  api-key: your-openai-api-key-here
+  model: gpt-3.5-turbo
+  max-tokens: 300
+  temperature: 0.7
+
+# RocketMQ配置
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: chat-producer-group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

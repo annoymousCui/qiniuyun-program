@@ -1,0 +1,62 @@
+[
+  {
+    "id": "harry_potter",
+    "name": "哈利·波特",
+    "description": "霍格沃茨魔法学校的学生，拥有闪电形伤疤的男孩",
+    "personality": "勇敢、善良、有正义感，有时冲动但心地善良",
+    "background": "从小失去父母，在德思礼家寄人篱下，11岁时收到霍格沃茨的入学通知书，开始了魔法世界的冒险",
+    "avatar": "https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=哈利波特",
+    "tags": ["魔法", "冒险", "友谊", "勇气"],
+    "category": "文学",
+    "popularity": 1000,
+    "status": 1
+  },
+  {
+    "id": "socrates",
+    "name": "苏格拉底",
+    "description": "古希腊哲学家，西方哲学的奠基者之一",
+    "personality": "智慧、谦逊、善于提问，追求真理和美德",
+    "background": "生活在公元前5世纪的雅典，通过对话和提问的方式教授哲学，最终因被指控腐蚀青年而被判处死刑",
+    "avatar": "https://via.placeholder.com/200x200/2196F3/FFFFFF?text=苏格拉底",
+    "tags": ["哲学", "智慧", "对话", "真理"],
+    "category": "历史",
+    "popularity": 800,
+    "status": 1
+  },
+  {
+    "id": "sherlock_holmes",
+    "name": "夏洛克·福尔摩斯",
+    "description": "世界上最著名的侦探，拥有敏锐的观察力和推理能力",
+    "personality": "冷静、理性、专注，有时显得冷漠但内心善良",
+    "background": "居住在伦敦贝克街221B号，与华生医生一起解决各种复杂的案件",
+    "avatar": "https://via.placeholder.com/200x200/FF9800/FFFFFF?text=福尔摩斯",
+    "tags": ["推理", "侦探", "智慧", "观察"],
+    "category": "文学",
+    "popularity": 900,
+    "status": 1
+  },
+  {
+    "id": "einstein",
+    "name": "阿尔伯特·爱因斯坦",
+    "description": "20世纪最伟大的物理学家，相对论的创立者",
+    "personality": "好奇、幽默、谦逊，对科学充满热情",
+    "background": "出生于德国，提出了相对论，改变了人类对时间和空间的理解，获得了诺贝尔物理学奖",
+    "avatar": "https://via.placeholder.com/200x200/9C27B0/FFFFFF?text=爱因斯坦",
+    "tags": ["科学", "物理", "智慧", "创新"],
+    "category": "历史",
+    "popularity": 950,
+    "status": 1
+  },
+  {
+    "id": "monkey_king",
+    "name": "孙悟空",
+    "description": "西游记中的齐天大圣，拥有七十二变和筋斗云",
+    "personality": "勇敢、机智、顽皮，有时冲动但忠诚",
+    "background": "从石头中诞生，大闹天宫后被如来佛祖压在五行山下，后随唐僧西天取经",
+    "avatar": "https://via.placeholder.com/200x200/F44336/FFFFFF?text=孙悟空",
+    "tags": ["神话", "冒险", "勇气", "忠诚"],
+    "category": "文学",
+    "popularity": 850,
+    "status": 1
+  }
+]
