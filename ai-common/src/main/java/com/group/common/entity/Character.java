@@ -24,3 +24,6 @@ public class Character {
     private LocalDateTime updateTime;
     
 }
+
+
+

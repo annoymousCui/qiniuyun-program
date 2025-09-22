@@ -1,19 +1,22 @@
 package com.group.user.repository;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.group.common.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * 用户数据访问层
  */
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+@Mapper
+public interface UserRepository extends BaseMapper<User> {
     
-    Optional<User> findByUsername(String username);
+    @Select("SELECT * FROM users WHERE username = #{username}")
+    User findByUsername(String username);
     
-    Optional<User> findByEmail(String email);
+    @Select("SELECT * FROM users WHERE email = #{email}")
+    User findByEmail(String email);
     
 }
+
+

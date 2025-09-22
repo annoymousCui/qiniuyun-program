@@ -17,3 +17,6 @@ public interface CharacterRepository extends MongoRepository<Character, String> 
     List<Character> findByStatusOrderByPopularityDesc(Integer status);
     
 }
+
+
+

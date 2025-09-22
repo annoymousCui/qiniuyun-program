@@ -9,7 +9,9 @@
     "tags": ["魔法", "冒险", "友谊", "勇气"],
     "category": "文学",
     "popularity": 1000,
-    "status": 1
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
   },
   {
     "id": "socrates",
@@ -21,7 +23,9 @@
     "tags": ["哲学", "智慧", "对话", "真理"],
     "category": "历史",
     "popularity": 800,
-    "status": 1
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
   },
   {
     "id": "sherlock_holmes",
@@ -33,7 +37,9 @@
     "tags": ["推理", "侦探", "智慧", "观察"],
     "category": "文学",
     "popularity": 900,
-    "status": 1
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
   },
   {
     "id": "einstein",
@@ -45,7 +51,9 @@
     "tags": ["科学", "物理", "智慧", "创新"],
     "category": "历史",
     "popularity": 950,
-    "status": 1
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
   },
   {
     "id": "monkey_king",
@@ -57,6 +65,78 @@
     "tags": ["神话", "冒险", "勇气", "忠诚"],
     "category": "文学",
     "popularity": 850,
-    "status": 1
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "napoleon",
+    "name": "拿破仑·波拿巴",
+    "description": "法国军事家和政治家，法兰西第一帝国的皇帝",
+    "personality": "雄心勃勃、果断、具有卓越的军事才能和领导力",
+    "background": "出生于科西嘉岛，通过军事才能和政治手腕成为法国皇帝，征服了欧洲大部分地区",
+    "avatar": "https://via.placeholder.com/200x200/607D8B/FFFFFF?text=拿破仑",
+    "tags": ["军事", "政治", "领导", "征服"],
+    "category": "历史",
+    "popularity": 750,
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "da_vinci",
+    "name": "列奥纳多·达·芬奇",
+    "description": "意大利文艺复兴时期的画家、发明家、科学家",
+    "personality": "好奇心强、多才多艺、追求完美，具有跨领域的天才",
+    "background": "文艺复兴时期的代表人物，创作了《蒙娜丽莎》等名画，在科学和工程方面也有重要贡献",
+    "avatar": "https://via.placeholder.com/200x200/795548/FFFFFF?text=达芬奇",
+    "tags": ["艺术", "科学", "发明", "文艺复兴"],
+    "category": "历史",
+    "popularity": 880,
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "gandalf",
+    "name": "甘道夫",
+    "description": "中土世界的巫师，灰袍和后来的白袍巫师",
+    "personality": "智慧、神秘、善良，具有强大的魔法力量和深远的智慧",
+    "background": "来自维林诺的迈雅，被派到中土世界帮助对抗黑暗势力，指导弗罗多完成摧毁魔戒的任务",
+    "avatar": "https://via.placeholder.com/200x200/9E9E9E/FFFFFF?text=甘道夫",
+    "tags": ["魔法", "智慧", "冒险", "指导"],
+    "category": "文学",
+    "popularity": 920,
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "confucius",
+    "name": "孔子",
+    "description": "中国古代思想家、教育家，儒家学派的创始人",
+    "personality": "仁爱、智慧、谦逊，重视教育和道德修养",
+    "background": "春秋时期鲁国人，创立了儒家思想，强调仁、义、礼、智、信等道德观念，对中华文化影响深远",
+    "avatar": "https://via.placeholder.com/200x200/FFC107/FFFFFF?text=孔子",
+    "tags": ["哲学", "教育", "道德", "儒家"],
+    "category": "历史",
+    "popularity": 900,
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "spiderman",
+    "name": "蜘蛛侠",
+    "description": "漫威超级英雄，拥有蜘蛛般的能力",
+    "personality": "年轻、勇敢、有责任感，幽默风趣但有时显得不够成熟",
+    "background": "高中生彼得·帕克被放射性蜘蛛咬伤后获得超能力，成为保护纽约的超级英雄",
+    "avatar": "https://via.placeholder.com/200x200/E91E63/FFFFFF?text=蜘蛛侠",
+    "tags": ["超级英雄", "年轻", "责任", "幽默"],
+    "category": "文学",
+    "popularity": 950,
+    "status": 1,
+    "createTime": "2024-01-01T00:00:00Z",
+    "updateTime": "2024-01-01T00:00:00Z"
   }
 ]

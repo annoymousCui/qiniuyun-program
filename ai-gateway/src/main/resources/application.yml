@@ -7,7 +7,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 127.0.0.1:8848
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
     gateway:
       routes:
         - id: user-service
@@ -42,8 +46,19 @@ spring:
             allowedHeaders: "*"
             allowCredentials: true
 
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: qiniuyun_ai_gateway${unique-name:}-service_common-message-execute_pg
+    send-message-timeout: 2000
+    retry-times-when-send-failed: 1
+    retry-times-when-send-async-failed: 1
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+
+

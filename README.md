@@ -54,6 +54,11 @@ ai-roleplay-platform/
 - 夏洛克·福尔摩斯（推理侦探）
 - 爱因斯坦（物理学家）
 - 孙悟空（神话传说）
+- 拿破仑（法国皇帝）
+- 达·芬奇（文艺复兴大师）
+- 甘道夫（中土世界巫师）
+- 孔子（中国古代思想家）
+- 蜘蛛侠（漫威超级英雄）
 
 ## 系统架构图
 
@@ -154,7 +159,17 @@ cd ai-roleplay-platform
 mysql -u root -p < sql/init.sql
 
 # 导入角色数据到MongoDB
-mongoimport --db ai_roleplay --collection characters --file sql/characters.json --jsonArray
+# Windows系统
+cd sql
+import_mongodb_data.bat
+
+# Linux/Mac系统
+cd sql
+chmod +x import_mongodb_data.sh
+./import_mongodb_data.sh
+
+# 或者手动执行
+mongoimport --db qiniuyun_ai_roleplay --collection characters --file sql/characters.json --jsonArray --upsert
 ```
 
 4. **配置服务**

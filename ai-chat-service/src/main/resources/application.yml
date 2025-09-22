@@ -10,21 +10,99 @@ spring:
         server-addr: localhost:8848
   data:
     mongodb:
-      uri: mongodb://localhost:27017/ai_roleplay
-      database: ai_roleplay
+      uri: mongodb://127.0.0.1:27017/qiniuyun_ai_roleplay
+      database: qiniuyun_ai_roleplay
+    redis:
+      host: 127.0.0.1
+      port: 6379
 
-# LLM配置 - 只使用基础LLM模型能力
-openai:
-  api-key: your-openai-api-key-here
-  model: gpt-3.5-turbo
-  max-tokens: 300
-  temperature: 0.7
+# AI配置 - 参照shortlink2项目配置
+ai:
+  # SBERT向量生成服务配置
+  sbert:
+    api-url: http://localhost:8001
+    model-name: all-MiniLM-L6-v2
+    timeout: 30000
+  bailian:
+    # 百炼模型广场配置
+    api-key: sk-53d9d8812df745c187dccc9397ec64b2
+    endpoint: https://dashscope.aliyuncs.com/compatible-mode/v1
+    # 向量模型配置
+    embedding:
+      model: text-embedding-v1
+      max-tokens: 2048
+      chunk-size: 500
+      chunk-overlap: 50
+      use-pca: false
+      pca-dim: 256
+    # 对话模型配置
+    chat:
+      model: qwen-turbo
+      temperature: 0.7
+      max-tokens: 1000
+      top-p: 0.8
+    # 模型广场配置
+    model-gallery:
+      # 通义千问系列
+      qwen-turbo: qwen-turbo
+      qwen-plus: qwen-plus
+      qwen-max: qwen-max
+      # 向量模型
+      text-embedding-v1: text-embedding-v1
+      # 其他模型
+      chatglm3-6b: chatglm3-6b
+      baichuan2-7b: baichuan2-7b
+  # Weaviate向量数据库配置
+  weaviate:
+    url: http://127.0.0.1:8080
+    api-key: ${WEAVIATE_API_KEY:}
+    timeout: 30
+    # 向量模型配置
+    vectorizer:
+      model: text-embedding-v1
+      dimensions: 1536
+    # 集合配置
+    collections:
+      documents:
+        name: Documents
+        description: 文档向量存储集合
+        properties:
+          - name: title
+            dataType: text
+            description: 文档标题
+          - name: content
+            dataType: text
+            description: 文档内容
+          - name: type
+            dataType: text
+            description: 文档类型
+          - name: source
+            dataType: text
+            description: 文档来源
+          - name: url
+            dataType: text
+            description: 文档URL
+          - name: creator
+            dataType: text
+            description: 创建者
+          - name: createTime
+            dataType: date
+            description: 创建时间
+          - name: updateTime
+            dataType: date
+            description: 更新时间
+          - name: status
+            dataType: int
+            description: 状态
 
 # RocketMQ配置
 rocketmq:
-  name-server: localhost:9876
+  name-server: 127.0.0.1:9876
   producer:
-    group: chat-producer-group
+    group: qiniuyun_ai_chat${unique-name:}-service_common-message-execute_pg
+    send-message-timeout: 2000
+    retry-times-when-send-failed: 1
+    retry-times-when-send-async-failed: 1
 
 management:
   endpoints:

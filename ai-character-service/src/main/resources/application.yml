@@ -10,11 +10,62 @@ spring:
         server-addr: localhost:8848
   data:
     mongodb:
-      uri: mongodb://localhost:27017/ai_roleplay
-      database: ai_roleplay
+      uri: mongodb://127.0.0.1:27017/qiniuyun_ai_roleplay
+      database: qiniuyun_ai_roleplay
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+# AI配置 - 参照shortlink2项目配置
+ai:
+  # SBERT向量生成服务配置
+  sbert:
+    api-url: http://localhost:8001
+    model-name: all-MiniLM-L6-v2
+    timeout: 30000
+  bailian:
+    # 百炼模型广场配置
+    api-key: sk-53d9d8812df745c187dccc9397ec64b2
+    endpoint: https://dashscope.aliyuncs.com/compatible-mode/v1
+    # 向量模型配置
+    embedding:
+      model: text-embedding-v1
+      max-tokens: 2048
+      chunk-size: 500
+      chunk-overlap: 50
+      use-pca: false
+      pca-dim: 256
+    # 对话模型配置
+    chat:
+      model: qwen-turbo
+      temperature: 0.7
+      max-tokens: 1000
+      top-p: 0.8
+    # 模型广场配置
+    model-gallery:
+      # 通义千问系列
+      qwen-turbo: qwen-turbo
+      qwen-plus: qwen-plus
+      qwen-max: qwen-max
+      # 向量模型
+      text-embedding-v1: text-embedding-v1
+      # 其他模型
+      chatglm3-6b: chatglm3-6b
+      baichuan2-7b: baichuan2-7b
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: qiniuyun_ai_character${unique-name:}-service_common-message-execute_pg
+    send-message-timeout: 2000
+    retry-times-when-send-failed: 1
+    retry-times-when-send-async-failed: 1
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+
+
