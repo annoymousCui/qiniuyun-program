@@ -28,14 +28,55 @@ export default { }
 </script>
 
 <style scoped>
-.card { border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
-.cover { height:140px; background-size:cover; background-position:center; }
-.body { padding:12px; display:flex; flex-direction:column; gap:8px; }
-.title { margin:0; font-size:18px; }
-.desc { margin:0; color:#6b7280; min-height:40px; }
-.actions { display:flex; gap:8px; margin-top:4px; }
-.primary, .ghost { padding:8px 12px; border-radius:10px; border:1px solid transparent; cursor:pointer; }
-.primary { background:#5B7CFA; color:#fff; }
-.ghost { background:transparent; border-color:#e5e7eb; }
-.card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.06); transform: translateY(-2px); transition: .2s; }
+.card { 
+  border:1px solid #e5e7eb; 
+  border-radius:14px; 
+  overflow:hidden; 
+  background:#fff; 
+  display:flex; 
+  flex-direction:column; 
+}
+.cover { 
+  height:140px; 
+  background-size:cover; 
+  background-position:center; 
+}
+.body { 
+  padding:12px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:8px; 
+}
+.title { 
+  margin:0; 
+  font-size:18px; 
+}
+.desc { 
+  margin:0; 
+  color:#6b7280; 
+  min-height:40px; 
+}
+.actions { 
+  display:flex; 
+  gap:8px; 
+  margin-top:4px; 
+}
+.primary, .ghost { 
+  padding:8px 12px; 
+  border-radius:10px; 
+  border:1px solid transparent; 
+  cursor:pointer; 
+}
+.primary { 
+  background:#5B7CFA; 
+  color:#fff; 
+}
+.ghost { 
+  background:transparent; 
+  border-color:#e5e7eb; 
+}
+.card:hover { 
+  box-shadow: 0 6px 24px rgba(0,0,0,.06); 
+  transform: translateY(-2px); transition: .2s; 
+}
 </style>

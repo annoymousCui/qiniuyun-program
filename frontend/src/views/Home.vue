@@ -39,7 +39,7 @@ function gotoSettings() {
 
 <template>
   <div class="home">
-    <!-- 顶部导航（极简） -->
+    <!-- 顶部导航 -->
     <header class="nav">
       <div class="brand">AI 角色聊天</div>
       <div class="nav-actions">
@@ -101,37 +101,121 @@ function gotoSettings() {
 </template>
 
 <style scoped>
-.home { max-width: 1120px; margin: 0 auto; padding: 16px 20px 40px; }
-.nav { display:flex; justify-content:space-between; align-items:center; padding:8px 0 16px; }
-.brand { font-weight:700; font-size:20px; }
-.nav-actions { display:flex; gap:8px; }
-.primary, .ghost, .search-btn {
-  border-radius:10px; padding:8px 14px; border:1px solid transparent; cursor:pointer;
+.home { 
+  max-width: 1120px; 
+  margin: 0 auto; 
+  padding: 16px 20px 40px; 
 }
-.primary { background:#5B7CFA; color:#fff; }
-.ghost { background:transparent; border-color:#e5e7eb; }
-.search { display:flex; gap:8px; margin:12px 0 8px; }
+.nav { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  padding:8px 0 16px; 
+}
+.brand { 
+  font-weight:700; 
+  font-size:20px; 
+}
+.nav-actions { 
+  display:flex; 
+  gap:8px; 
+}
+.primary, .ghost, .search-btn {
+  border-radius:10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 14px;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+.primary { 
+  background:#5B7CFA; 
+  color:#fff; 
+}
+.primary, a.primary {
+  text-decoration: none;
+}
+.ghost { 
+  background:transparent; 
+  border-color:#e5e7eb; 
+}
+.search { 
+  display:flex; 
+  gap:8px; 
+  margin:12px 0 8px; 
+}
 .search input {
-  flex:1; height:40px; border:1px solid #e5e7eb; border-radius:12px; padding:0 12px;
+  flex:1; 
+  height:40px; 
+  border:1px solid #e5e7eb; 
+  border-radius:12px; 
+  padding:0 12px;
   outline:none;
 }
-.search-btn { height:40px; }
-.chips { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 16px; }
+
+.chips { 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:8px; 
+  margin:8px 0 16px; 
+}
 .chip {
-  padding:6px 12px; border-radius:999px; background:#f3f4f6; border:1px solid #e5e7eb; cursor:pointer;
+  padding:6px 12px; 
+  border-radius:999px; 
+  background:#f3f4f6; 
+  border:1px solid #e5e7eb; 
+  cursor:pointer;
 }
-.chip.active { background:#eef2ff; border-color:#5B7CFA; color:#374151; }
+.chip.active { 
+  background:#eef2ff; 
+  border-color:#5B7CFA; 
+  color:#374151; 
+}
 .hero {
-  margin: 8px 0 20px; border-radius:16px; min-height:160px;
+  margin: 8px 0 20px; 
+  border-radius:16px; 
+  min-height:160px;
   background: linear-gradient(90deg, #eef2ff, #e0e7ff);
-  display:grid; grid-template-columns: 1fr 280px; overflow:hidden;
+  display:grid; 
+  grid-template-columns: 1fr 280px; 
+  overflow:hidden;
 }
-.hero-text { padding:20px; display:flex; flex-direction:column; gap:10px; }
-.hero-text h2 { margin:0; }
-.hero-cover { background: url('https://picsum.photos/560/240?blur=2') center/cover no-repeat; }
-.list { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
-.skeleton { height:180px; border-radius:14px; background:linear-gradient(90deg,#f3f4f6,#e5e7eb,#f3f4f6); animation: shimmer 1.2s infinite; }
+.hero-text { 
+  padding:20px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:10px; 
+}
+.hero-text h2 { 
+  margin:0; 
+}
+.hero-cover { 
+  background: url('https://picsum.photos/560/240?blur=2') center/cover no-repeat; 
+}
+.list { 
+  display:grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap:16px; }
+.skeleton { 
+  height:180px; 
+  border-radius:14px; 
+  background:linear-gradient(90deg,#f3f4f6,#e5e7eb,#f3f4f6); 
+  animation: shimmer 1.2s infinite; 
+}
 @keyframes shimmer { 0%{background-position:-200px 0}100%{background-position:200px 0} }
-.empty { grid-column:1/-1; text-align:center; padding:24px; color:#6b7280; }
-@media (max-width: 900px) { .list { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; } }
+.empty { 
+  grid-column:1/-1; 
+  text-align:center; 
+  padding:24px; 
+  color:#6b7280; }
+@media (max-width: 900px) { 
+  .list { 
+    grid-template-columns: 1fr; 
+  } 
+  .hero { 
+    grid-template-columns: 1fr; 
+  } 
+}
 </style>
