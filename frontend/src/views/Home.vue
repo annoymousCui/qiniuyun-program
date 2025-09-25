@@ -3,8 +3,15 @@ import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { fetchRoles } from '@/api'
 import CharacterCard from '@/components/CharacterCard.vue'
+import { useSessionStore } from '@/stores/session'
 
 const router = useRouter()
+const session = useSessionStore()
+const user = session.user
+const menuOpen = ref(false)
+
+function toggleMenu() { menuOpen.value = !menuOpen.value }
+async function doLogout() { await session.logout(); menuOpen.value = false; router.push('/') }
 const loading = ref(true)
 const keyword = ref('')
 const roles = ref([])
@@ -43,7 +50,27 @@ function gotoSettings() {
     <header class="nav">
       <div class="brand">AI 角色聊天</div>
       <div class="nav-actions">
-        <button class="ghost" @click="gotoSettings">设置</button>
+        <button class="ghost" @click="gotoSettings" aria-label="设置">设置</button>
+
+        <template v-if="user">
+          <div class="user-wrap">
+            <button class="avatar-btn" @click="toggleMenu" :aria-expanded="menuOpen">
+              <img v-if="user.avatar" :src="user.avatar" alt="头像" class="avatar" />
+              <span v-else class="avatar-initial">{{ (user.nickname || user.username || 'U').charAt(0).toUpperCase() }}</span>
+            </button>
+            <div v-if="menuOpen" class="user-menu" role="menu">
+              <router-link to="/profile" class="menu-item">个人中心</router-link>
+              <button class="menu-item" @click="doLogout">登出</button>
+            </div>
+          </div>
+        </template>
+
+        <template v-else>
+          <!-- 登录/注册，次级操作 -->
+          <router-link class="link" to="/login">登录</router-link>
+          <router-link class="outline" to="/register">注册</router-link>
+        </template>
+
         <router-link class="primary" to="/chat/harry">快速体验</router-link>
       </div>
     </header>
@@ -141,6 +168,16 @@ function gotoSettings() {
   background:transparent; 
   border-color:#e5e7eb; 
 }
+
+.user-wrap { position: relative; }
+.avatar-btn { 
+  width:40px; height:40px; border-radius:999px; padding:0; border:1px solid transparent; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; background:transparent;
+}
+.avatar { width:36px; height:36px; border-radius:999px; object-fit:cover; }
+.avatar-initial { width:36px; height:36px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; background:#f3f4f6; color:#374151; font-weight:600 }
+.user-menu { position:absolute; right:0; top:48px; background:#fff; border:1px solid #e5e7eb; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.08); min-width:140px; z-index:40; }
+.menu-item { display:block; padding:8px 12px; color:#374151; text-align:left; border:none; background:transparent; width:100%; }
+.menu-item:hover { background:#f8fafc }
 .search { 
   display:flex; 
   gap:8px; 
